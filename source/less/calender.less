@@ -1,0 +1,43 @@
+
+/* Reusable calender */
+.calender{
+
+    @col-background-white-alpha:rgba(255,255,255,0.8);
+    @border-radius:12px;
+    @size:96px;
+
+    height:@size;
+    width:@size;
+    max-width:100%;
+    margin:auto;
+    text-align: center;
+    display: block;
+    clear:both;
+    border-radius: @border-radius;
+    .dropshadowLight();
+    
+    h6,time,p{
+        background-color: @col-background-white-alpha;
+        padding:4px 1px 3px 1px;
+    }
+    h6{
+        // round top twitter_fav_icon
+        border-radius: @border-radius @border-radius 0 0;
+        margin:0;
+    }
+
+    time{
+        margin:1px 0;
+        font-size:2em;
+        display: block;
+        sup{
+            font-size:50%;
+            top: -1em;
+        }
+    }
+
+    p{
+        margin:0;
+        border-radius:0 0 @border-radius @border-radius;
+    }
+}

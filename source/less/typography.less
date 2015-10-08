@@ -1,0 +1,93 @@
+@import "colours";
+
+html,body{
+    font-size: 16px;
+}
+
+/* Links ---------------------------------------  */
+a{
+    color:@col-links;
+    transition:color 50ms ease-in;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+        color:darken(@col-links,20%);
+        text-decoration: none;
+    }
+    /*
+    &:visited,
+    &:active {
+
+    } 
+    */
+}
+
+/*
+
+// external links
+a[href^="http://"] {
+    padding-right: 13px;
+    background: url('external.gif') no-repeat center right;
+}
+
+// emails
+a[href^="mailto:"] {
+    padding-right: 20px;
+    background: url('email.png') no-repeat center right;
+}
+
+// pdfs
+a[href$=".pdf"] {
+    padding-right: 18px;
+    background: url('acrobat.png') no-repeat center right;
+}
+
+a[data-tooltip]:link, a[data-tooltip]:visited {
+    position: relative;
+    text-decoration: none;
+    border-bottom: solid 1px;
+}
+
+a[data-tooltip]:before {
+    content: "";
+    position: absolute;
+    border-top: 20px solid #0090ff;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    visibility: hidden;
+    top: -18px;
+    left: -26px;
+}
+
+a[data-tooltip]:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    color: white;
+    top: -35px;
+    left: -26px;
+    background: #0090ff;
+    padding: 5px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+    visibility: hidden;
+}
+
+a[data-tooltip]:hover:before, a[data-tooltip]:hover:after {
+    visibility: visible;
+    transition: visibility 0s linear .3s;
+}
+*/
+
+/*
+* A better looking default horizontal rule
+*/
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}

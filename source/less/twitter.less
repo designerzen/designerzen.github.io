@@ -1,0 +1,272 @@
+#widget-twitter {
+    padding: 12px;
+    max-width:480px;
+
+}
+// #widget-twitter ul li
+.tweet{
+    display: block;
+    clear:both;
+    position: relative;
+    background-color:white ;
+    color:black;
+    padding:12px;
+    min-height:48px;
+    .dropshadowLight();
+}
+.tweet--latest{
+
+}
+.profile{
+    overflow:hidden;
+    position: relative;
+    float:left;
+    max-width:48px;
+    margin-right:12px;
+    margin-bottom:12px;
+    .p-nickname{
+        clear:both;
+        display: block;
+    }
+}
+
+// Changes beween a clock a claneder and an archive!
+.tweet--date{
+    float:right;
+    margin:0;
+    .calender{
+        width:48px;
+    }
+    .calender.recent{
+        margin-top:-@padding - 3px;
+    }
+    .calender--day{
+        border-radius:0 0 4px 4px;
+    }
+}
+
+
+
+.tweet--content{
+    a.link{
+        display: block;
+        max-width:100%;
+        //white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        //clear:both;
+        .tco-hidden{
+            display: none;
+        }
+        .tco-display{
+
+        }
+        .tco-ellipsis{
+
+        }
+    }
+    a.hashtag{
+
+    }
+
+}
+
+.tweet--actions{
+    display: block;
+    clear:both;
+    margin:0;
+}
+
+.tweet--intent{
+    margin:0 6px 0 0;
+    display: inline-block;
+    //width: 70px;
+    //height: 45px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    text-indent: 100px;
+    overflow: hidden;
+    // reply reply favorite favorite favorite retweet retweet retweet
+    background: url(../images/png/twitter_sprites.png) repeat-y;
+    background-position: -(16px*0) center;
+}
+.tweet--reply{
+    background-position: -(16px*0) 0;
+    &:hover{
+        background-position: -(16px*1) 0;
+    }
+}
+
+.tweet--favorite{
+    background-position: -(16px*2) 0;
+
+    //background: url(../images/png/twitter_fave_alpha.png) no-repeat;
+    //background-position: 0 0;
+
+    &:hover {
+        background-position: -(16px*3) 0;
+        //background-position: -3519px 0;
+        //transition: background 1s steps(55);
+    }
+    &:focus,&:active{
+        background: url(../images/png/twitter_fave_alpha.png) no-repeat;
+        //background-position: 0 0;
+        background-position: -3519px 0;
+        transition: background 1s steps(55);
+    }
+}
+.tweet--retweet{
+    @width: 19px;
+
+    @offset: (16px * 5);
+
+    width: @width;
+    background-position: -(@offset) 0;
+    &:hover{
+        background-position: -(@offset+@width) 0;
+    }
+    &:focus,&:active{
+        background-position: -(@offset+@width+@width) 0;
+    }
+}
+
+.retweet-credit{
+    display:block;
+    clear:both;
+    visibility: hidden;
+    &:after {
+       content: ".";
+       visibility: hidden;
+       display: block;
+       height: 0;
+       clear: both;
+    }
+}
+
+.tweet--latest{
+    // dropcaps and biggerfonts...
+    p{
+        font-size:200%;
+    }
+    p::first-letter{
+        float:left;
+        font-size:400%;
+        margin:0;
+        padding:0 4px 1px 0;
+        line-height:0.9;
+    }
+    p+p::first-letter{
+        float:none;
+        font-size:100%;
+        margin:0;
+        padding:0;
+        line-height:1;
+    }
+    // profile at bottom...
+    .profile{
+        position:absolute;
+        bottom:0;
+        right:0;
+        .p-nickname,
+        .full-name{
+            display:none;
+        }
+    }
+    .tweet--date{
+        position:absolute;
+        right:128px;
+        bottom:14px;
+    }
+    .tweet--actions{
+        margin-top:2.5em;
+    }
+}
+
+.tweets-mine{
+
+}
+.tweets-theirs{
+    .hide--date{
+        .retweet-credit,
+        .tweet--date,
+        .tweet--actions{
+            display: none;
+        }
+        .profile{
+              max-width: 32px;
+        }
+    }
+}
+
+/* clearfix
+#widget-twitter ul li:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}*/
+#widget-twitter ul li .user{
+    position: relative;
+    float:left;
+    max-width:48px;
+    margin-right:12px;
+    margin-bottom:12px;
+}
+
+#widget-twitter ul li .tweet{
+    margin:0;
+
+}
+#widget-twitter ul li .tweet a{
+    max-width:100%;
+    /*white-space: nowrap;*/
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+
+#widget-twitter ul li .timePosted{
+    float:right;
+    margin:0;
+}
+
+#widget-twitter ul li .user a{
+
+
+
+}
+#widget-twitter ul li .user a span{
+    display:none;
+}
+
+#widget-twitter ul li a.twitter_fav_icon,
+#widget-twitter ul li a.twitter_reply_icon,
+#widget-twitter ul li a.twitter_retweet_icon{
+    /*width: 70px;*/
+    height: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+#widget-twitter ul li ul.interact{
+    display: block;
+    clear:both;
+}
+
+#widget-twitter ul li ul.interact li{
+    display: inline-block;
+    width: 70px;
+    height: 45px;
+    padding: 0;
+    overflow: hidden;
+}
+#widget-twitter .twitter_fav_icon {
+    text-indent: 100px;
+    background: url(../images/png/twitter_fave_alpha.png) no-repeat;
+    background-position: 0 0;
+}
+#widget-twitter .twitter_fav_icon:hover {
+    background-position: -3519px 0;
+    transition: background 1s steps(55);
+}

@@ -1,0 +1,91 @@
+@font-location:'../fonts/';
+
+@font-family-book:'bebasbook';
+@font-file-book:'bebasneue_book-webfont';
+
+@font-family-regular:'bebasreg';
+@font-file-regular:'bebasneue_regular-webfont';
+
+@font-family-bold:'bebasbold';
+@font-file-bold:'bebasneue_bold-webfont';
+
+@font-family-light:'bebaslight';
+@font-file-light:'bebasneue_light-webfont';
+
+@font-family-thin:'bebasthin';
+@font-file-thin:'bebasneue_thin-webfont';
+
+@font-location-bebas:'bebas/';
+@font-location-pt:'ptsans/ptsans_regular_macroman/';
+
+@font-fallback:'Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif';
+
+
+//@font-family-sans:'PTSans';
+//@font-file-sans:'PTS55F-webfont';
+
+@font-family-sans:'Avro';
+@font-file-sans:'Arvo-Regular-webfont';
+@font-location-avro:'avro/';
+
+
+
+.font-face( @font-family: sans-serif; @font-file:font; @font-location:@font-location; @font-weight: normal; @font-style: normal) {
+    @font-face {
+
+        font-family: @font-family;
+        src: url('@{font-location}@{font-file}.eot');
+        src: url('@{font-location}@{font-file}.eot?#iefix') format('embedded-opentype'),
+             url('@{font-location}@{font-file}.woff') format('woff'),
+             url('@{font-location}@{font-file}.ttf') format('truetype'),
+             url('@{font-location}@{font-file}.svg#bebasregular') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+
+
+// BOLD ===================================================
+/*
+.font-face( @font-family-bold, @font-file-bold, '@{font-location}@{font-location-bebas}' );
+ {
+    font-family:"@{font-family-bold}", ~"@{font-fallback}";
+}
+*/
+// REGULAR =================================================
+.font-face( @font-family-regular, @font-file-regular, '@{font-location}@{font-location-bebas}' );
+time,
+.calender--date{
+    font-family:"@{font-family-regular}", ~"@{font-fallback}";
+}
+
+.font-face( @font-family-sans, @font-file-sans, '@{font-location}@{font-location-avro}' );
+p,figcaption{
+    font-family:"@{font-family-sans}", ~"@{font-fallback}";
+}
+
+// LIGHT ==================================================
+.font-face( @font-family-light, @font-file-light, '@{font-location}@{font-location-bebas}' );
+body,
+h1,h2,h3,h4,h5,h6,
+.menu-item a,
+.calender--date sup{
+    font-family:"@{font-family-light}", ~"@{font-fallback}";
+}
+
+
+// BOOK ===================================================
+/*
+.font-face( @font-family-book, @font-file-book, '@{font-location}@{font-location-bebas}' );
+h1 span{
+    font-family:"@{font-family-book}", ~"@{font-fallback}";
+}
+
+// THIN ===================================================
+
+.font-face( @font-family-thin, @font-file-thin );
+h1 span{
+    font-family:"@{font-family-thin}", ~"@{font-fallback}";
+}
+*/

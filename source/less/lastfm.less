@@ -1,0 +1,44 @@
+@lastfm-size:256px;
+/* Last FM */
+.lastfm--item{
+    height: @lastfm-size;
+    width: @lastfm-size;
+    margin-right:12px;
+    min-height: 120px;
+    min-width: @lastfm-size;
+    max-height: 300px;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    .dropshadow();
+}
+
+// spans in h
+.lastfm--artist{
+
+}
+.lastfm--album{
+
+}
+/* figure */
+.lastfm--figure{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+}
+
+/* img */
+.lastfm--image{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+/* li */
+.lastfm--song{
+    margin:0;
+}

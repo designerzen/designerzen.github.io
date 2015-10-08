@@ -1,0 +1,197 @@
+// Github Ribbon
+#widget-github-ribbon {
+      overflow: hidden;
+      position: absolute;
+      right:0px;
+      top: 0px;
+      margin:0;
+      height:144px;
+      width:144px;
+}
+
+#widget-github-ribbon a {
+    position: relative;
+    white-space: nowrap;
+    background-color: #a00;
+    border: 1px solid #faa;
+    color: #fff;
+    display: block;
+    font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0px 0 0 0;
+    padding: 10px 0 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition:color 200ms ease-out;
+    /* shadow */
+    text-shadow: 0 0 5px #444;
+    /* file size: 1.6ko | optimized file size: 0.9ko | base64 size: 1.1ko */
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABKVBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Oe9X6AAAAYnRSTlMAAQIDBAcIDA0PEBESFBUWGBkeHyEoMTIzNDU4OTw+P0JGWVxeX2BiY2RlZ2hvc3R1eHp+io+Xm52epKmqq62usLe5wcLDxMnQ0dLW2tvc3t/h4uPo6uvs8fLz9fb3+vv8/suNaVkAAAF7SURBVHgBjdHZW9NAFAXwE0iElCARZCkuIotEUFyQBSJERBEILaAo6d6e//+PcO58aZslD/xe5mHuPfOdbzA06R1e1sn65aE3ibw5v8OBjj+HNHuvx5Tenp1av2bOdSJkKWKBaAmxhYiFogVoEzckw+ModXcckryZgDigsgLLu1MVT09V1TvPwgqVAyhlinmpMjsCZWRWCsxTlAEEFIvIWKQIALdLsYaMNYqui02KPw4ynN8Um/Ap1pGzTuEj1Ek2cmz9dogmlVsUuKXSBEUFBaoUoKihQI0iPqaQMxWvnlOsImeV4hz7FBcmMswLin0sU9tBxg61ZYw3qB25SHhyRK0xDuySX179INtfN8qjOvz5u6BNjbsAplvsbVm/qAQGFOMb+1rTULZJPnsqf/MC2kv2bUOYZ+R3lLzPr0ehPWbszITmVsn3GCqRWtVFbKZC/vz45tOj1EBlBgPOCUUpOXDiIMF4+zc98G/DQNrY1tW9Bc26v/owhof6D6AkqSgsdGGuAAAAAElFTkSuQmCC);
+    background-position:25% center;
+    background-repeat: no-repeat;
+    /* 45 deg ccw rotation */
+    transform: translateX(35px) translateY(20px) rotate(45deg);
+    transition:transform 200ms ease-out, background-color 300ms ease-out;
+    /* shadow */
+    .dropshadow();
+
+    &:hover {
+        transform: translateX(31px) translateY(24px) rotate(45deg);
+        background-color: #c00;
+    }
+}
+
+
+
+
+
+
+@size-github:128px;
+@padding-github:12px;
+
+.github{
+    //width: 500000px;
+    //overflow-x: scroll;
+    //vertical-align: top;
+    //display: flex;
+    display: block;
+    position: relative;
+    perspective: 400px;
+}
+
+.github--item{
+
+    display: inline-block;
+    margin-bottom:0;
+
+    header,h1{
+        margin:0;
+    }
+}
+
+.github--activity{
+    width:@size-github;
+    height:@size-github;
+    text-align: center;
+    border-radius: 6px;
+    padding:@padding-github;
+    position: absolute;
+    top:0;
+    left:0;
+    margin-top:0;
+
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform-origin: right center;
+    backface-visibility: hidden;
+
+}
+
+.zOrder(quantity){
+    // loop through all of them...
+}
+
+.looper( @from:0; @to:1 ){
+
+	.github--activity.github--item_@{from}
+	{
+        //z-index:(999 - @n);
+		//.translateZ( @n * 1px );
+		z-index:@from;
+        //left:@n*2px;
+        transform: rotateY( 1deg + @from * 3 ) translateX(@from*2px);
+		//.transform( translate3d( 0, 0, -@n * @gap ) );/rotateX(@n+0deg)
+        user-select:none;
+
+        &.pressed{
+            transform: rotateY( 0deg ) translateX(300px);
+            z-index:@to - @from;
+        }
+	}
+
+}
+
+// This will call the mixin "name"
+.loop-up (@from:0; @to:1) when (@from < @to) {
+	.looper( @from, @to );
+	.loop-up( @from + 1 , @to );	// self iterating... next iteration
+}
+.loop-up(0,100);
+
+/*
+.github--item:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
+.github--avatar{
+
+    width:48px;
+    height:48px;
+
+
+    width:24px;
+    height:24px;
+
+    //width:12px;
+    //height:12px;
+
+    float:left;
+    margin:0;
+
+    img{
+        width:100%;
+        height:auto;
+    }
+}
+
+.github--date{
+    //float:right;
+    margin:0;
+
+    .clock,
+    .calender{
+        width:@size-github / 2;
+        height:@size-github / 2;
+        float: none;
+        margin: auto;
+        display: block;
+    }
+
+    .clock{
+
+    }
+    .calender{
+
+    }
+}
+
+// Personal Repos...
+.github--public{
+    width:100%;
+
+     .github--date{
+        float:right;
+        background-color: pink;
+        margin-top:-24px;
+    }
+}
+
+@col-github-base:hsl(10, 90%, 50%);
+
+// Classes applied to MY repositories...
+.github--push{
+    background-color: spin( @col-github-base, 0);
+}
+.github--pull{
+    background-color: spin( @col-github-base, 90);
+}
+
+.github--create{
+    background-color: spin( @col-github-base, 270);
+}
+
+// Classess applied to actions I've taken on OTHER peoples' repos
+.github--watch{
+    background-color: spin( @col-github-base, 180);
+}

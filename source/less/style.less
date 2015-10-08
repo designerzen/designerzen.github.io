@@ -1,0 +1,214 @@
+@import "mixins";
+@import "colours";
+@import "dropshadows";
+@import "fonts";
+
+@padding:12px;
+
+body {
+
+    background: #fff;
+
+    /*
+    background: radial-gradient(circle, red 10%, transparent 40%), radial-gradient(circle, blue 10%, #fff 10%) 50px 50px;
+    background-size: 100px 100px;
+    */
+}
+
+.dot{
+    margin:0 -10px 0 -10px;
+    opacity:0.6;
+}
+
+// a Div class that frames content with a specific colour
+// and adds some nice shadows
+.widget,
+.card{
+    padding:3em;
+    background-color: yellow;
+    border-radius: 1px 1px 0 0;
+    display: block;
+    //.dropshadowLight();
+
+    &:after {
+       content: ".";
+       visibility: hidden;
+       display: block;
+       height: 0;
+       clear: both;
+    }
+}
+
+// For retweets and stuff...
+.iframe{
+    position: absolute;
+    top:0;
+    left:0;
+
+
+    // has a close button
+    .iframe--close{
+        position: fixed;
+        right:0;
+        top:0;
+        z-index: 909;
+        cursor: pointer;
+    }
+}
+
+/*
+#designerzen_logo,
+#designerzen_logo.loop {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+#designerzen_logo.loop path {
+  stroke-dasharray: 3814.42602539;
+  stroke-dashoffset: 3814.42602539;
+  animation: dash 5s linear alternate infinite;
+}
+*/
+
+
+@import "typography";
+@import "images";
+@import "menu";
+@import "tooltips";
+
+@import "clock";
+@import "calender";
+
+@import "twitter";
+@import "lastfm";
+@import "github";
+@import "flickr";
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* These selection rule sets have to be separate.
+* Customize the background color to match your design.
+*/
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+#main-header{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:0;
+    //z-index:99;
+
+    span{
+        color:red;
+    }
+
+    #main-menu{
+        position: fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:0;
+        padding:0;
+        z-index:99;
+    }
+
+    a.logo--link {
+      /*
+      width: 100%;
+      width: 100hmin;
+      height: 100%;
+      height: 100vmin;
+     */
+      position: absolute;
+      top:0;
+      left:0;
+      max-width: 128px;
+      max-height: 128px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:0;
+      overflow: hidden;
+    }
+
+}
+
+#main-content{
+    margin-top: 1vh;
+    margin-top: 100%;
+    min-height: 1vh;
+
+    #main-clock{
+        margin:0;
+        min-width: 160px;
+        max-width: 480px;
+        width: 33%;
+        float:right;
+        shape-outside: circle(60%);
+        // Overrides
+
+        #dynamic-clock.clock{
+            //width:30%;
+            //width: /max-width:480px;
+            //float:right;
+            width:100%;
+            height:auto;
+        }
+
+        #dynamic-clock.clock,
+        #dynamic-clock.clock .clock--hand{
+            .dropshadow();
+        }
+
+    }
+}
+
+
+
+// Each Widget :
+// Flex Box!
+.widget{
+    .dropshadow();
+}
+
+
+
+
+
+.flickr--item{
+    display: inline-block;
+}
+
+
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+    #main-header{
+        padding-left:128px + 14px;
+    }
+}
+
+@media print,
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+
+@import "animations";

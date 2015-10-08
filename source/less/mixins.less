@@ -1,0 +1,80 @@
+.hide()
+{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+
+// Set this to whatever it is in the base.less file (usually 100%)
+@base-font-size: 100%;
+@rem-fallback: true;
+
+.rem (@property, @rest...) {
+  @length: length(@rest);
+
+  .result () when (@length = 1) {
+    .fallback () when (@rem-fallback) {
+      @{property}:
+        unit(@base-font-size / 100 * 16 * extract(@rest, 1), px);
+    }
+
+    .fallback;
+
+    @{property}:
+      unit(extract(@rest, 1), rem);
+  }
+
+  .result () when (@length = 2) {
+    .fallback () when (@rem-fallback) {
+      @{property}:
+        unit(@base-font-size / 100 * 16 * extract(@rest, 1), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 2), px);
+    }
+
+    .fallback;
+
+    @{property}:
+      unit(extract(@rest, 1), rem)
+      unit(extract(@rest, 2), rem);
+  }
+
+  .result () when (@length = 3) {
+    .fallback () when (@rem-fallback) {
+      @{property}:
+        unit(@base-font-size / 100 * 16 * extract(@rest, 1), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 2), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 3), px);
+    }
+
+    .fallback;
+
+    @{property}:
+      unit(extract(@rest, 1), rem)
+      unit(extract(@rest, 2), rem)
+      unit(extract(@rest, 3), rem);
+  }
+
+  .result () when (@length = 4) {
+    .fallback () when (@rem-fallback) {
+      @{property}:
+        unit(@base-font-size / 100 * 16 * extract(@rest, 1), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 2), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 3), px)
+        unit(@base-font-size / 100 * 16 * extract(@rest, 4), px);
+    }
+
+    .fallback;
+
+    @{property}:
+      unit(extract(@rest, 1), rem)
+      unit(extract(@rest, 2), rem)
+      unit(extract(@rest, 3), rem)
+      unit(extract(@rest, 4), rem);
+  }
+
+  .result;
+}

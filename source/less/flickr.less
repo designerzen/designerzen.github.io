@@ -1,0 +1,37 @@
+.flickr{
+    display: block;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100vw;
+    font-size: 0;
+}
+.flickr--item{
+    //width: 33.3%;
+    width: 256px;
+    flex: auto;
+}
+@supports not (flex-wrap: wrap) {
+    .flickr { display: block; }
+    .flickr--item {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.flickr--figure{
+    position: relative;
+
+    img{
+        max-width:100%;
+        min-width:128px;
+    }
+
+}
+
+.flickr--caption{
+    position: absolute;
+    bottom:0;
+    left:0;
+    margin:0;
+    background-color:white;
+    border-radius: 12px;
+}

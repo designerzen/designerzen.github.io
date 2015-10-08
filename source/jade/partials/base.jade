@@ -1,0 +1,66 @@
+doctype html
+html.no-js(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title Designerzen HUB
+		meta(name='description', content='portal, creative, github')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='stylesheets/base.css')
+
+		link(rel='apple-touch-icon', sizes='57x57', href='images/icons/apple-touch-icon-57x57.png')
+		link(rel='apple-touch-icon', sizes='60x60', href='images/icons/apple-touch-icon-60x60.png')
+		link(rel='apple-touch-icon', sizes='72x72', href='images/icons/apple-touch-icon-72x72.png')
+		link(rel='apple-touch-icon', sizes='76x76', href='images/icons/apple-touch-icon-76x76.png')
+		link(rel='apple-touch-icon', sizes='114x114', href='images/icons/apple-touch-icon-114x114.png')
+		link(rel='apple-touch-icon', sizes='120x120', href='images/icons/apple-touch-icon-120x120.png')
+		link(rel='apple-touch-icon', sizes='144x144', href='images/icons/apple-touch-icon-144x144.png')
+		link(rel='apple-touch-icon', sizes='152x152', href='images/icons/apple-touch-icon-152x152.png')
+		link(rel='apple-touch-icon', sizes='180x180', href='images/icons/apple-touch-icon-180x180.png')
+		link(rel='icon', type='image/png', href='images/icons/favicon-32x32.png', sizes='32x32')
+		link(rel='icon', type='image/png', href='images/icons/favicon-194x194.png', sizes='194x194')
+		link(rel='icon', type='image/png', href='images/icons/favicon-96x96.png', sizes='96x96')
+		link(rel='icon', type='image/png', href='images/icons/android-chrome-192x192.png', sizes='192x192')
+		link(rel='icon', type='image/png', href='images/icons/favicon-16x16.png', sizes='16x16')
+		link(rel='manifest', href='images/icons/manifest.json')
+		link(rel='shortcut icon', href='images/icons/favicon.ico')
+		meta(name='msapplication-TileColor', content='#2b5797')
+		meta(name='msapplication-TileImage', content='images/icons/mstile-144x144.png')
+		meta(name='msapplication-config', content='images/icons/browserconfig.xml')
+		meta(name='theme-color', content='#808ea5')
+
+
+	body
+		//if lt IE 8
+			p.browsehappy You are using an <strong> outdated </strong> browser.
+			<a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+
+		block content
+
+		link(rel='stylesheet', href='stylesheets/style.css', type='text/css')
+
+		//-
+			script(src='javascripts/vendor/greensock.min.js')
+			script(src='javascripts/vendor/imagesloaded.js')
+			script(src='javascripts/vendor/smooth-scroll.js')
+			script(src='javascripts/webservices/github.js')
+			script(src='javascripts/webservices/twitter.js')
+			script(src='javascripts/webservices/lastfm.js')
+			script(src='javascripts/webservices/flickr.js')
+			script(src='javascripts/fx.js')
+			script(src='javascripts/fx.filters.js')
+			script(src='javascripts/fx.preloader.js')
+			script(src='javascripts/fx.menu.js')
+			script(src='javascripts/clock.js')
+			script(src='javascripts/calender.js')
+			script(src='javascripts/logo.js')
+			script(src='javascripts/main.js')
+
+		script(src='javascripts/main.js')
+		script.
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='https://www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-1241310-2','auto');ga('send','pageview');

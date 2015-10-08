@@ -1,0 +1,52 @@
+extends partials/base
+block content
+	header#main-header(role="banner")
+		h1 Designer<span>zen</span>
+		h2 Maker of things
+		include partials/menu
+
+		a.logo--link(href='http://www.designerzen.com')
+			svg#designerzen_logo(width='256', height='256', viewbox='0 0 1024 1024', enable-background='new 0 0 1024 1024', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+				title Designer zen logo that links to homepage
+				path(fill='none', stroke='#000', stroke-width='40', d='m891.27,380.782h-246.137v94.678c0,52.272-42.389,94.678-94.676,94.678-52.29,0-94.662-42.405-94.662-94.678 0-52.288 42.372-94.678 94.662-94.678h94.676v-285.655l-.818-.268c-41.648-13.194-84.385-19.784-130.398-19.784-241.313,0-436.926,195.613-436.926,436.925 0,241.313 195.613,436.925 436.925,436.925 221.605,0 404.672-164.968 433.094-378.787h-245.08l189.34-189.356z')
+
+		#widget-github-ribbon
+			a(href='https://github.com/designerzen') Fork off
+
+
+	main#main-content(role="main",tabindex="-1")
+
+		ul#widgets
+			li
+				article#widget-clock.widget
+					h3 The Current Time where I am
+					#main-clock
+					p If you would like to contact me, first check my availability, then check my schedule, finally check out the clock and ensure that you are calling me at a respoinsible time.
+					p.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+			li.widget
+				h3 Tweets
+				article#widget-twitter
+
+			li.widget
+				h3 Github
+				article#widget-github
+
+			li.widget
+				h3 Last.fm
+				article#widget-lastfm
+
+			li.widget
+				h3 Flickr
+				article#widget-flickr
+
+			li.widget
+				h3 Pinterest
+				article#widget-pinterest
+
+			li.widget
+				h3 Activity
+				article#widget-activity
+
+	footer
+		ul#social
